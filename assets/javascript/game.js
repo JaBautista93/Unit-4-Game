@@ -12,3 +12,13 @@ var TotalCounter = document.getElementById('TotalCounter')
 // Used this link to make my buttons
 <script async src="//jsfiddle.net/jquerybyexample/2QbgP/embed/"></script>
 
+//Random number generator
+var RandNum = 19-120
+
+//wins and losses
+var win = o;
+var loss = 0;
+
+//button
+var button = 1-12;
+
