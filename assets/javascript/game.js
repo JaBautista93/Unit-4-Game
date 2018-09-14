@@ -8,6 +8,21 @@ var finalTotal
 var randNum
 var buttonNumber
 
+//adds the wins to the TotalScore
+function winner(){
+    alert("You Beat the Gummy Invaders!");
+     // wins++; 
+      //$("#win").text(win);
+      //reset();
+    }
+    //addes the losses to the TotalScore
+    function Loser(){
+    alert ("You have Diabeties!");
+      //loss++;
+      //$("#loss").text(loss);
+      //reset()
+    }
+
 //Random number generator for the computer
  $( document ).ready(function(){
     var RandNum = Math.floor((Math.random() * 102) + 19); 
@@ -39,17 +54,25 @@ $("#btnClose4").val(buttonNumber)
         if (TotalScore === RandNum){
             alert("you Win");
             win++;
+            //win();
+
         }  
         else if (TotalScore > RandNum){
             alert("you are a loser");
             Loss++;
+            //loser();
         }
     });
+
+    //Need to fix what happends when you lose and win and need to figure out why my function isn't being called and loaded
+    // also need a reset function.  Could use that function I saw on the previous page.  Also could make my  page prettier
+    // work on CSS to give it some life.  
 
 
 //wins and losses
 $("#win").text(win)
 $("#loss").text(loss)
+
 
 
 //When you click Gummys
@@ -78,28 +101,7 @@ $("#loss").text(loss)
 
 
 
-// //adds the wins to the TotalScore
-// function winner(){
-//     alert("You Beat the Gummy Invaders!");
-//       wins++; 
-//       $('#TotalWins').text(TotalWin);
-//       reset();
-//     }
-//     //addes the losses to the TotalScore
-//     function Loser(){
-//     alert ("You have Diabeties!");
-//       loss++;
-//       $('#TotalLoss').text(TotalLoss);
-//       reset()
 
-// //Game Reset
-// function Reset(){
-//     RandNum = Math.floor((Math.random() * 102) + 19);
-//     btnClose1 =  Math.floor((Math.random() * 12) + 1);
-//     btnClose2 = Math.floor((Math.random() * 12) + 1);
-//     btnClose3 = Math.floor((Math.random() * 12) + 1);
-//     btnClose4 = Math.floor((Math.random() * 12) + 1);
-//     TotalCounter = 0
-//     $('#TotalCounter').text(TotalCounter);
-//  }
+
+
 
