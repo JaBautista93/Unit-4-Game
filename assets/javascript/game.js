@@ -5,121 +5,106 @@ var win = 0
 var loss = 0
 var finalTotal
 var randNum
+var RandNum2
 var buttonNumber
 var status
 
-
-
-//adds the wins 
-function Winner(){
-    alert("You Beat the 4 Gummy Horseman!");
-      win++; 
-      $("#win").text(win);
-      TotalScore = 0
-      reset();
-    }
-    //addes the losses
-    function Loser(){
-    alert ("You have Diabeties!");
-      loss++;
-      $("#loss").text(loss);
-      TotalScore = 0
-      reset()
-    }
-//game reset
-function reset(){
-    RandNum = Math.floor((Math.random() * 102) + 19)
-    $("#randNum").text(RandNum)
-
-    buttonNumber =  Math.floor((Math.random() * 12) + 1)
-    console.log(buttonNumber)
-    $("#btnClose1").val(buttonNumber)
-    
-    buttonNumber = Math.floor((Math.random() * 12) + 1)
-    console.log(buttonNumber)
-    $("#btnClose2").val(buttonNumber)
-    
-    buttonNumber = Math.floor((Math.random() * 12) + 1)
-    console.log(buttonNumber)
-    $("#btnClose3").val(buttonNumber)
-    
-    buttonNumber = Math.floor((Math.random() * 12) + 1)
-    console.log(buttonNumber)
-    $("#btnClose4").val(buttonNumber)
-    
-    
-    //This through my code off...thought I had to reset both functions but no...Keeping for learning purposes
-    $(".button button").on("click", function() {
-        TotalScore += parseInt($(this).val());
-        console.log(TotalScore)
-        $("#TotalScore").text(TotalScore)
-        if (TotalScore === RandNum){
-            $("#status").html(" You are a salty sugar killer - Nice Win!");
-            Winner();
-        }  
-        else if (TotalScore > RandNum){
-            $("#status").html(" You need an insulin shot! - You lost ");
-            Loser();
-        }
-    });
-    
-}
 //wins and losses
 $("#win").text(win)
 $("#loss").text(loss)
 $("#TotalScore").text(TotalScore)
 
 //Random number generator for the computer
- $( document ).ready(function(){
-    var RandNum = Math.floor((Math.random() * 102) + 19); 
+$(document).ready(function () {
+    var RandNum = Math.floor((Math.random() * 102) + 19);
     console.log(RandNum)
     $("#randNum").text(RandNum)
-   
-//Creates Random numbers for each of the Button Values
-buttonNumber =  Math.floor((Math.random() * 12) + 1)
-console.log(buttonNumber)
-$("#btnClose1").val(buttonNumber)
 
-buttonNumber = Math.floor((Math.random() * 12) + 1)
-console.log(buttonNumber)
-$("#btnClose2").val(buttonNumber)
+    //Creates Random numbers for each of the Button Values
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose1").val(buttonNumber)
 
-buttonNumber = Math.floor((Math.random() * 12) + 1)
-console.log(buttonNumber)
-$("#btnClose3").val(buttonNumber)
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose2").val(buttonNumber)
 
-buttonNumber = Math.floor((Math.random() * 12) + 1)
-console.log(buttonNumber)
-$("#btnClose4").val(buttonNumber)
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose3").val(buttonNumber)
 
-//Should add button clicks together on a counter
-    $(".button button").on("click", function() {
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose4").val(buttonNumber)
+
+    //Should add button clicks together on a counter
+    $(".button button").on("click", function () {
         TotalScore += parseInt($(this).val());
         console.log(TotalScore)
         $("#TotalScore").text(TotalScore)
-        if (TotalScore === RandNum){
-            $("#status").html(" You are a salty sugar killer - Nice Win!");
+        if (TotalScore === RandNum) {
+            $("#status").html(" You are a salty sugar killer - Nice Win! ");
             Winner();
-        }  
-        else if (TotalScore > RandNum){
+        } else if (TotalScore > RandNum) {
             $("#status").html(" You need an insulin shot! - You lost ");
             Loser();
         }
     });
- 
-}); 
+
+    //adds the wins 
+    function Winner() {
+        alert("You Beat the 4 Gummy Horseman!");
+        win++;
+        $("#win").text(win);
+        TotalScore = 0
+        reset();
+    }
+    //addes the losses
+    function Loser() {
+        alert("You have Diabetes!");
+        loss++;
+        $("#loss").text(loss);
+        TotalScore = 0
+        reset()
+    }
+    //game reset 
+    function reset() {
+        RandNum = Math.floor((Math.random() * 102) + 19)
+        $("#randNum").text(RandNum)
+        console.log(RandNum)
+        buttonNumber = Math.floor((Math.random() * 12) + 1)
+        console.log(buttonNumber)
+        $("#btnClose1").val(buttonNumber)
+
+        buttonNumber = Math.floor((Math.random() * 12) + 1)
+        console.log(buttonNumber)
+        $("#btnClose2").val(buttonNumber)
+
+        buttonNumber = Math.floor((Math.random() * 12) + 1)
+        console.log(buttonNumber)
+        $("#btnClose3").val(buttonNumber)
+
+        buttonNumber = Math.floor((Math.random() * 12) + 1)
+        console.log(buttonNumber)
+        $("#btnClose4").val(buttonNumber)
+
+        //This through my code off...thought I had to reset both functions but no...Keeping for learning purposes
+        $(".button button").on("click", function () {
+            TotalScore += parseInt($(this).val());
+            console.log(TotalScore)
+            $("#TotalScore").text(TotalScore)
+            if (TotalScore === RandNum) {
+                $("#status").html(" You are a salty sugar killer - Nice Win!");
+                Winner();
+            } else if (TotalScore > RandNum) {
+                $("#status").html(" You need an insulin shot! - You lost ");
+                Loser();
+            }
+        });
+
+
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+});
