@@ -15,11 +15,11 @@
 <body>
     <header id="GameTitle">
         <div class="Title containter">
-        <a href="index.html" id="logo">Gummy Bear Rebellion!</a>
+        <a href="index.html" id="logo">Gummy Bear Guess Game </a>
         </div>
     </header>
 
-    <div id="main-container" class="body Container">
+    <div id="main-container" class="Container">
         <p>Gummy Bears have offically rebelled and are running rampant, in order to survie you have to play the guessing game with the 4 Gummy Horsemen.  Stop them before their plans of Dibates for all humans becomes a reality</p>
 
         <p>You will be given a random number at the start of the game.</p>
@@ -36,15 +36,22 @@
     <div>
         <div class="row">
              <div class="col-lg-6">
+                <div>
+                    <p>The Gummy Bears Score to Beat is:</p>    
+                 </div>
                 <p id="randNum"></p>
              </div>
                
              <div class="col-lg-6">
                <p id="status"></p>
-               
-               <p id="win"></p>
-
-               <p id="loss"></p>
+               <div>
+                <p>Your Total Wins are:</p>    
+             </div>
+               <p id="win">Total Wins</p>
+               <div>
+                <p>Your Total Losses are:</p>    
+             </div>
+               <p id="loss">Total Losses</p>
              </div>
         </div>
     </div>
@@ -72,15 +79,16 @@
                     </div>
                 </div>
 
+
+
     <div>
-       <p id="TotalScore" class="TotalScoreContainer"></p>
+       <p>Your Total Score is:</p>    
     </div>
 
     <div>
-       <p id="TotalCounter" class="TotalCounterContainer"></p>    
-    </div>
+        <p id="TotalScore" class="TotalScoreContainer"></p>
+     </div>
     
 <script type="text/javascript" src="assets/javascript/game.js"></script>
-
 </body>
 </html>

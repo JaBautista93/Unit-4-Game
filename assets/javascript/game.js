@@ -1,27 +1,73 @@
 //This section holds variables
 var Document
-var TotalCounter = 0
 var TotalScore = 0
 var win = 0
 var loss = 0
 var finalTotal
 var randNum
 var buttonNumber
+var status
 
-//adds the wins to the TotalScore
-function winner(){
-    alert("You Beat the Gummy Invaders!");
-     // wins++; 
-      //$("#win").text(win);
-      //reset();
+
+
+//adds the wins 
+function Winner(){
+    alert("You Beat the 4 Gummy Horseman!");
+      win++; 
+      $("#win").text(win);
+      TotalScore = 0
+      reset();
     }
-    //addes the losses to the TotalScore
+    //addes the losses
     function Loser(){
     alert ("You have Diabeties!");
-      //loss++;
-      //$("#loss").text(loss);
-      //reset()
+      loss++;
+      $("#loss").text(loss);
+      TotalScore = 0
+      reset()
     }
+//game reset
+function reset(){
+    RandNum = Math.floor((Math.random() * 102) + 19)
+    $("#randNum").text(RandNum)
+
+    buttonNumber =  Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose1").val(buttonNumber)
+    
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose2").val(buttonNumber)
+    
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose3").val(buttonNumber)
+    
+    buttonNumber = Math.floor((Math.random() * 12) + 1)
+    console.log(buttonNumber)
+    $("#btnClose4").val(buttonNumber)
+    
+    
+    //This through my code off...thought I had to reset both functions but no...Keeping for learning purposes
+    $(".button button").on("click", function() {
+        TotalScore += parseInt($(this).val());
+        console.log(TotalScore)
+        $("#TotalScore").text(TotalScore)
+        if (TotalScore === RandNum){
+            $("#status").html(" You are a salty sugar killer - Nice Win!");
+            Winner();
+        }  
+        else if (TotalScore > RandNum){
+            $("#status").html(" You need an insulin shot! - You lost ");
+            Loser();
+        }
+    });
+    
+}
+//wins and losses
+$("#win").text(win)
+$("#loss").text(loss)
+$("#TotalScore").text(TotalScore)
 
 //Random number generator for the computer
  $( document ).ready(function(){
@@ -52,42 +98,14 @@ $("#btnClose4").val(buttonNumber)
         console.log(TotalScore)
         $("#TotalScore").text(TotalScore)
         if (TotalScore === RandNum){
-            alert("you Win");
-            win++;
-            //win();
-
+            $("#status").html(" You are a salty sugar killer - Nice Win!");
+            Winner();
         }  
         else if (TotalScore > RandNum){
-            alert("you are a loser");
-            Loss++;
-            //loser();
+            $("#status").html(" You need an insulin shot! - You lost ");
+            Loser();
         }
     });
-
-    //Need to fix what happends when you lose and win and need to figure out why my function isn't being called and loaded
-    // also need a reset function.  Could use that function I saw on the previous page.  Also could make my  page prettier
-    // work on CSS to give it some life.  
-
-
-//wins and losses
-$("#win").text(win)
-$("#loss").text(loss)
-
-
-
-//When you click Gummys
-// $('.btnClose1').on ('click', function(){
-//     TotalCounter = TotalCounter + btnClose1;
-//     console.log("New TotalCounter= " + btnClose1);
-//     $('#finalTotal').text(TotalCounter); 
-//           //win/lose cond.
-//         if (TotalCounter == RandNum){
-//           Win();
-//         }
-//         else if ( TotalCounter > RandNum){
-//           loser();
-//         }   
-//   })  
  
 }); 
 
